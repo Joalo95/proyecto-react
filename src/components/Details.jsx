@@ -56,22 +56,7 @@ function Details() {
         setCambiarColor(colorAsignado)
     } */
 
-    /* const [elementoActivo, setElementoActivo] = useState(0);
-    const [anterior, setAnterior] = useState(pokemones.length - 1);
-    const [siguiente, setSiguiente] = useState(elementoActivo + 1);
 
-    useEffect(() => {
-        if (elementoActivo === 0) {
-            setAnterior(pokemones.length - 1);
-            setSiguiente(elementoActivo + 1);
-        } else if (elementoActivo === pokemones.length - 1) {
-            setAnterior(elementoActivo - 1);
-            setSiguiente(0);
-        } else {
-            setAnterior(elementoActivo - 1);
-            setSiguiente(elementoActivo + 1);
-        }
-    }, [elementoActivo]); */
 
 
     return (
@@ -92,20 +77,25 @@ function Details() {
                     </div>
                 </div>
                 <div className="profile">
-                    {/*  <Link to={`/Details/${anterior}`}>
+
+                    <Link to={`/Details/${pokemon?.id}`}>
                         <div>
                             <button><img src="/images/chevron-left.svg" alt="izquierda" /></button>
                         </div>
-                    </Link> */}
+                    </Link>
+
                     <div>
                         <img src={pokemon?.imagen} alt={pokemon?.nombre} />
                     </div>
-                    {/* <Link to={`/Details/${siguiente}`}>
+
+                    <Link to={`/Details/${pokemon?.id}`}>
                         <div>
                             <button><img src="/images/chevron-right.svg" alt="derecha" /></button>
                         </div>
-                    </Link> */}
+                    </Link>
+
                 </div>
+
                 <div className="types">
                     {pokemon?.tipo.map((item, index) => {
                         return (
